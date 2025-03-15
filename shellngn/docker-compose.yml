@@ -1,0 +1,15 @@
+# https://hub.docker.com/r/shellngn/pro/
+version: "3"
+
+services:
+  shellngn:
+    image: shellngn/pro:latest
+    container_name: shellngn
+    ports:
+      - 8080:8080
+    volumes:
+      - ./data:/home/node/server/data
+    environment:
+      - HOST=0.0.0.0
+      - TZ=Asia/Shanghai
+    restart: unless-stopped
