@@ -1,0 +1,18 @@
+# https://hub.docker.com/r/fredliang/derper
+version: "3"
+
+services:
+  derper:
+    image: fredliang/derper:latest
+    environment:
+      - DERP_DOMAIN=<> # Change <> to your domain
+      - DERP_VERIFY_CLIENTS=false
+      - DERP_CERT_DIR=/app/ssl
+    ports:
+      - 80:80
+      - 443:443
+      - 3478:3478
+      - 3000:3000
+    volumes:
+      - ./data:/app/ssl
+    restart: always

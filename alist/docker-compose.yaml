@@ -1,0 +1,17 @@
+# https://alist.nn.ci/zh/guide/install/docker.html
+# https://hub.docker.com/r/xhofe/alist
+version: "3"
+
+services:
+  alist:
+    image: xhofe/alist:latest
+    container_name: alist
+    volumes:
+      - ./data:/opt/alist/data
+    ports:
+      - 3905:5244
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK=022
+    restart: unless-stopped
