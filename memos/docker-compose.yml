@@ -1,4 +1,5 @@
 # https://www.usememos.com/docs/install/container-install
+
 version: "3"
 
 services:
@@ -8,4 +9,5 @@ services:
     volumes:
       - ./data:/var/opt/memos
     ports:
-      - 5230:5230
+      - 15230:5230
+    restart: always

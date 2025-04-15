@@ -1,4 +1,5 @@
 # https://github.com/easychen/CookieCloud
+
 version: "3"
 
 services:
@@ -6,9 +7,9 @@ services:
     image: easychen/cookiecloud:latest
     container_name: cookiecloud
     ports:
-      - 8088:8088
+      - 18088:8088
     volumes:
       - ./data:/app/data
     environment:
       - TZ=Asia/Shanghai
-    restart: unless-stopped
+    restart: always

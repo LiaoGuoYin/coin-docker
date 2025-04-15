@@ -1,0 +1,28 @@
+# https://docs.hedgedoc.org/setup/docker/
+
+version: "3"
+
+services:
+  database:
+    image: postgres:13.4-alpine
+    environment:
+      - POSTGRES_USER=hedgedoc
+      - POSTGRES_PASSWORD=<VAR> # VAR
+      - POSTGRES_DB=hedgedoc
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    restart: always
+  app:
+    # Make sure to use the latest release from https://hedgedoc.org/latest-release
+    image: quay.io/hedgedoc/hedgedoc:1.10.2
+    environment:
+      - CMD_DB_URL=postgres://hedgedoc:<VAR>@database:5432/hedgedoc  # VAR
+      - CMD_DOMAIN=<VAR>  # VAR
+      - CMD_URL_ADDPORT=true
+    volumes:
+      - ./data:/hedgedoc/public/uploads
+    ports:
+      - 13000:3000
+    restart: always
+    depends_on:
+      - database

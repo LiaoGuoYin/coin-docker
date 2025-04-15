@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/jerryin/zerotier-moon
-#
+
 version: "3"
 
 services:
@@ -9,5 +9,5 @@ services:
     network_mode: host
     volumes:
       - ./data:/var/lib/zerotier-one
-    command: -4 <> # Change <> to your public IP
+    command: -4 <VAR> # VAR: Change <VAR> to your public IP
     restart: always
