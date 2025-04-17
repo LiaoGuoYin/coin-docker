@@ -10,7 +10,7 @@ services:
     volumes:
       - ./data:/opt/alist/data
     ports:
-      - 15244:5244
+      - 5244:5244
     environment:
       - PUID=0
       - PGID=0

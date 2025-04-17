@@ -7,7 +7,7 @@ services:
     image: shellngn/pro:latest
     container_name: shellngn
     ports:
-      - 18080:8080
+      - 8080:8080
     volumes:
       - ./data:/home/node/server/data
     environment:

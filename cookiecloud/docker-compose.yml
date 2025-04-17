@@ -7,7 +7,7 @@ services:
     image: easychen/cookiecloud:latest
     container_name: cookiecloud
     ports:
-      - 18088:8088
+      - 8088:8088
     volumes:
       - ./data:/app/data
     environment:

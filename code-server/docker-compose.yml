@@ -7,11 +7,11 @@ services:
     image: codercom/code-server:latest
     container_name: code-server
     ports:
-      - 0.0.0.0:28080:8080
+      - 0.0.0.0:18080:8080
       - 0.0.0.0:13001:3001
     volumes:
       - ./data/:/root/
-      - <VAR>:/home/coder/project # VAR
+      - /root/workspace:/home/coder/project
     user: ${UID}:${GID}
     environment:
       - DOCKER_USER=$USER
