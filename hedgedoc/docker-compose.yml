@@ -15,10 +15,10 @@ services:
     restart: always
   app:
     # Make sure to use the latest release from https://hedgedoc.org/latest-release
-    image: quay.io/hedgedoc/hedgedoc:1.10.2
+    image: quay.io/hedgedoc/hedgedoc:1.10.3
     environment:
-      - CMD_DB_URL=postgres://hedgedoc:REDACTED@database:5432/hedgedoc  # VAR
-      - CMD_DOMAIN=note.liaoguoyin.com  # VAR
+      - CMD_DB_URL=postgres://hedgedoc:REDACTED@database:5432/hedgedoc # VAR
+      - CMD_DOMAIN=note.liaoguoyin.com # VAR
       - CMD_PORT=13000
       - CMD_PROTOCOL_USESSL=true
     volumes:
