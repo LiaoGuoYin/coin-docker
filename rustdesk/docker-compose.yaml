@@ -4,9 +4,8 @@ version: "3"
 
 services:
   hbbs: # RustDesk ID/Rendezvous 服务器
-    container_name: hbbs
-    network_mode: host # 使用 host 模式
     image: rustdesk/rustdesk-server:latest
+    container_name: hbbs
     command: hbbs
     volumes:
       - ./data/hbbs:/root
@@ -14,15 +13,16 @@ services:
       - "RELAY=IP:21117" # 运行这些容器的服务器的【IP:port】或域名
       - "ENCRYPTED_ONLY=1" # 开启加密
       - "KEY=REDACTED" # 自定义KEY，去掉这一行可以自动生成
+    network_mode: host # 使用 host 模式
     depends_on:
       - hbbr
     restart: always
 
   hbbr: # RustDesk 中继服务器
-    container_name: hbbr
-    network_mode: host # 使用 host 模式
     image: rustdesk/rustdesk-server:latest
+    container_name: hbbr
     command: hbbr
     volumes:
       - ./data/hbbr:/root
+    network_mode: host # 使用 host 模式
     restart: always

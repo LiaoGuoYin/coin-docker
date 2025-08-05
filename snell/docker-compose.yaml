@@ -1,0 +1,14 @@
+# https://hub.docker.com/r/vocrx/snell-server/tags
+# https://github.com/vocrx/Surge/tree/main/snell-server-docker
+version: "3"
+
+services:
+  snell-server:
+    image: vocrx/snell-server:latest
+    container_name: snell-server
+    restart: always
+    network_mode: host
+    environment:
+      PORT: 10086
+      PSK: SayMyName
+      IPV6: "true"

@@ -24,4 +24,4 @@ services:
       - FUCLAUDE_MODERATION_ENABLED=false
       - FUCLAUDE_SIGNUP_ENABLED=false
       - FUCLAUDE_SHOW_SESSION_KEY=true
-    restart: unless-stopped
+    restart: always
