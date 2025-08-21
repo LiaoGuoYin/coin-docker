@@ -1,0 +1,17 @@
+# https://hub.docker.com/r/tsl0922/ttyd
+
+version: "3"
+
+services:
+  ttyd:
+    image: tsl0922/ttyd:latest
+    container_name: ttyd
+    hostname: ttyd
+    command: ttyd -c REDACTED:REDACTED -t titleFixed="ttyd" -p 10087 -W bash
+    environment:
+      - TERM=xterm-256color
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data:/host:rw
+    network_mode: host
+    restart: always

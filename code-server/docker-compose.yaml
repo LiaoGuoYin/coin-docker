@@ -1,0 +1,16 @@
+# https://coder.com/docs/code-server/install#docker
+version: "3"
+
+services:
+  code-server:
+    image: codercom/code-server:latest
+    container_name: code-server
+    ports:
+      - 0.0.0.0:9000:8080
+    volumes:
+      - ./data/:/root/
+      - /root/workspace:/home/coder/project
+    user: "${UID}:${GID}"
+    environment:
+      - DOCKER_USER=$USER
+    restart: always

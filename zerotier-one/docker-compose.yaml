@@ -1,0 +1,17 @@
+# https://github.com/zyclonite/zerotier-docker
+
+version: "3"
+
+services:
+  zerotier-one:
+    image: zyclonite/zerotier
+    container_name: zerotier-one
+    devices:
+      - "/dev/net/tun:/dev/net/tun"
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    volumes:
+      - "./data:/var/lib/zerotier-one"
+    network_mode: host
+    restart: always
