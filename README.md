@@ -146,3 +146,9 @@ docker-compose logs -f
 * cookiecloud - cookie 浏览器同步服务端
 
 **注意**：使用这些服务时，请遵守相关法律法规和服务条款。
+
+## 其他
+
+所有 docker-compose.yaml 使用环境变量引用（${VAR_NAME}）
+
+可以复制 .env.example 为 .env 并填写实际值，这样可以安全地分享配置而不暴露私有信息

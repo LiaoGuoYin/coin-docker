@@ -8,9 +8,9 @@ services:
     container_name: shellngn
     ports:
       - 8080:8080
-    volumes:
-      - ./data:/home/node/server/data
     environment:
       - HOST=0.0.0.0
       - TZ=Asia/Shanghai
+    volumes:
+      - ./data:/home/node/server/data
     restart: always

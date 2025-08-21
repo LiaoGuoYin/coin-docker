@@ -6,8 +6,8 @@ services:
   zerotier-moon:
     image: jerryin/zerotier-moon:latest
     container_name: zerotier-moon
-    network_mode: host
+    command: -4 ${ZEROTIER_PUBLIC_IP}
     volumes:
       - ./data:/var/lib/zerotier-one
-    command: -4 <VAR> # VAR: Change <VAR> to your public IP
+    network_mode: host
     restart: always

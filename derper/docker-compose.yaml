@@ -5,15 +5,16 @@ version: "3"
 services:
   derper:
     image: fredliang/derper:latest
-    environment:
-      - DERP_DOMAIN=<VAR> # VAR: Change <VAR> to your domain
-      - DERP_VERIFY_CLIENTS=false
-      - DERP_CERT_DIR=/app/ssl
+    container_name: derper
     ports:
       - 80:80
       - 443:443
       - 3478:3478
       - 3000:3000
+    environment:
+      - DERP_DOMAIN=${DERP_DOMAIN}
+      - DERP_VERIFY_CLIENTS=false
+      - DERP_CERT_DIR=/app/ssl
     volumes:
       - ./data:/app/ssl
     restart: always

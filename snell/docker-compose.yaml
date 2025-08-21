@@ -6,9 +6,9 @@ services:
   snell-server:
     image: vocrx/snell-server:latest
     container_name: snell-server
-    restart: always
-    network_mode: host
     environment:
-      PORT: 10086
-      PSK: SayMyName
-      IPV6: "true"
+      PORT: ${SNELL_PORT}
+      PSK: ${SNELL_PSK}
+      IPV6: "${SNELL_IPV6}"
+    network_mode: host
+    restart: always

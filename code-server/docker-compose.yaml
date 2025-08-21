@@ -7,10 +7,10 @@ services:
     container_name: code-server
     ports:
       - 0.0.0.0:9000:8080
+    environment:
+      - DOCKER_USER=${USER}
     volumes:
       - ./data/:/root/
       - /root/workspace:/home/coder/project
     user: "${UID}:${GID}"
-    environment:
-      - DOCKER_USER=$USER
     restart: always

@@ -1,5 +1,12 @@
+# data
 */data/*
 */config/*
 */logs/*
 */letsencrypt/*
 */db/*
+
+# tmp
+.DS_Store
+
+# config
+.env

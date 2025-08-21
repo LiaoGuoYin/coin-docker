@@ -7,26 +7,26 @@ services:
   database:
     image: postgres:13.4-alpine
     container_name: hedgedoc-db
-    volumes:
-      - ./db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=hedgedoc
-      - POSTGRES_PASSWORD=REDACTED # VAR
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=hedgedoc
+    volumes:
+      - ./db:/var/lib/postgresql/data
     restart: always
   app:
     # Make sure to use the latest release from https://hedgedoc.org/latest-release
     image: quay.io/hedgedoc/hedgedoc:1.10.3
     container_name: hedgedoc
     ports:
-      - 13000:13000
+      - ${HEDGEDOC_PORT}:${HEDGEDOC_PORT}
+    environment:
+      - CMD_DB_URL=postgres://hedgedoc:${POSTGRES_PASSWORD}@database:5432/hedgedoc
+      - CMD_DOMAIN=${HEDGEDOC_DOMAIN}
+      - CMD_PORT=${HEDGEDOC_PORT}
+      - CMD_PROTOCOL_USESSL=true
     volumes:
       - ./data:/hedgedoc/public/uploads
-    environment:
-      - CMD_DB_URL=postgres://hedgedoc:REDACTED@database:5432/hedgedoc # VAR
-      - CMD_DOMAIN=note.liaoguoyin.com # VAR
-      - CMD_PORT=13000
-      - CMD_PROTOCOL_USESSL=true
     depends_on:
       - database
     restart: always
