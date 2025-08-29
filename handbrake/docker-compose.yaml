@@ -1,0 +1,21 @@
+# https://club.fnnas.com/forum.php?mod=viewthread&tid=33080&highlight=
+
+services:
+  handbrake:
+    image: jlesage/handbrake:latest
+    container_name: handbrake
+    ports:
+      - 5800:5800
+    volumes:
+      - ./data/config:/config # 配置文件
+      - ./data/output:/output # 视频输出路径
+      - ./data/input:/storage:ro # 源视频路径
+      - ./data/watch:/watch # 这里应该是自动转换的监视路径
+      - ./data/fonts:/usr/share/fonts/ # 字体路径，需要提前安装
+    environment:
+      - LANG=zh_CN.UTF-8
+      - TZ=Asia/Shanghai
+    devices:
+      - /dev/dri:/dev/dri # Intel核显加速
+    network_mode: bridge
+    restart: always
