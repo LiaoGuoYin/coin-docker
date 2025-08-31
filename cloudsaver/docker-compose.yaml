@@ -1,0 +1,12 @@
+# https://www.yuque.com/xiaoruihenbangde/ggogn3/ga6gaaiy5fsyw62l#AF382
+
+services:
+  cloudsaver:
+    image: jiangrui1994/cloudsaver:latest
+    container_name: cloudsaver
+    ports:
+      - 8008:8008
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    restart: always
