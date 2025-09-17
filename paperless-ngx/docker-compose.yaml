@@ -1,0 +1,25 @@
+# https://github.com/paperless-ngx/paperless-ngx/blob/main/docker/compose/docker-compose.sqlite.yml
+# https://club.fnnas.com/forum.php?mod=viewthread&tid=8521
+
+services:
+  broker:
+    image: docker.io/library/redis:8
+    container_name: paperless-ngx-redis
+    volumes:
+      - ./redis-data:/data
+    restart: always
+  webserver:
+    image: paperless-ngx/paperless-ngx:latest
+    container_name: paperless-ngx-webserver
+    depends_on:
+      - broker
+    ports:
+      - 18000:8000
+    volumes:
+      - ./data/config:/usr/src/paperless/data
+      - ./data/media:/usr/src/paperless/media
+      - ./data/export:/usr/src/paperless/export
+      - ./data/consume:/usr/src/paperless/consume
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+    restart: always

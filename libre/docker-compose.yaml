@@ -1,0 +1,16 @@
+# https://hub.docker.com/r/linuxserver/librespeed
+
+services:
+  librespeed:
+    image: linuxserver/librespeed:latest
+    container_name: librespeed
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - PASSWORD=${PASSWORD}
+    volumes:
+      - ./data/config:/config
+    ports:
+      - 10080:80
+    restart: always

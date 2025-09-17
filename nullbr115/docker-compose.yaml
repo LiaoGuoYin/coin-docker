@@ -1,0 +1,14 @@
+# https://hub.docker.com/r/gravityle/nullbr115
+
+services:
+  nullbr115:
+    image: gravityle/nullbr115:latest
+    container_name: nullbr115
+    ports:
+      - 18115:8115
+    volumes:
+      - ./data/config:/config
+      - ./data/media:/media
+    environment:
+      - API_KEY=${API_KEY}
+    restart: always
