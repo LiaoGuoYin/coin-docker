@@ -9,7 +9,7 @@ services:
       - ./data/redis:/data
     restart: always
   webserver:
-    image: paperless-ngx/paperless-ngx:latest
+    image: paperlessngx/paperless-ngx:latest
     container_name: paperless-ngx-webserver
     depends_on:
       - broker
