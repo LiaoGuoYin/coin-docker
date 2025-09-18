@@ -8,6 +8,6 @@ services:
     environment:
       PORT: ${SNELL_PORT}
       PSK: ${SNELL_PSK}
-      IPV6: "${SNELL_IPV6}"
+      IPV6: ${SNELL_IPV6}
     network_mode: host
     restart: always

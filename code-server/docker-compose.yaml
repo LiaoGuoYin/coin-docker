@@ -11,5 +11,5 @@ services:
     volumes:
       - ./data/:/root/
       - /root/workspace:/home/coder/project
-    user: "${UID}:${GID}"
+    user: ${UID}:${GID}
     restart: always

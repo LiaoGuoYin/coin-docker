@@ -7,9 +7,9 @@ services:
     container_name: hbbs
     command: hbbs
     environment:
-      - "RELAY=${RELAY_IP}:21117"
-      - "ENCRYPTED_ONLY=1"
-      - "KEY=${RUSTDESK_KEY}"
+      - RELAY=${RELAY_IP}:21117
+      - ENCRYPTED_ONLY=1
+      - KEY=${RUSTDESK_KEY}
     volumes:
       - ./data/hbbs:/root
     network_mode: host

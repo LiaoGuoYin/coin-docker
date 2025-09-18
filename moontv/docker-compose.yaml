@@ -6,10 +6,10 @@ services:
     container_name: moontv-core
     restart: always
     ports:
-      - "3000:3000"
+      - 3000:3000
     environment:
       - USERNAME=REDACTED
-      - PASSWORD=REDACTED
+      - PASSWORD=${MOONTV_PASSWORD:-admin123}
       - NEXT_PUBLIC_STORAGE_TYPE=upstash
       - UPSTASH_URL=${UPSTASH_URL}
       - UPSTASH_TOKEN=${UPSTASH_TOKEN}
