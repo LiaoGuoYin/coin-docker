@@ -1,6 +1,5 @@
 # https://hub.docker.com/r/vocrx/snell-server/tags
 # https://github.com/vocrx/Surge/tree/main/snell-server-docker
-version: "3"
 
 services:
   snell-server:

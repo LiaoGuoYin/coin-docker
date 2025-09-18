@@ -1,7 +1,6 @@
 # https://docs.hedgedoc.org/setup/docker/
 # https://docs.hedgedoc.org/configuration/
 
-version: "3"
 
 services:
   database:

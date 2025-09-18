@@ -1,6 +1,5 @@
 # https://hub.docker.com/r/fredliang/derper
 
-version: "3"
 
 services:
   derper:

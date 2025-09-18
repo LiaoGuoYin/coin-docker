@@ -1,6 +1,5 @@
 # https://www.usememos.com/docs/install/container-install
 
-version: "3"
 
 services:
   memos:

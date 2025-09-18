@@ -6,7 +6,7 @@ services:
     image: docker.io/library/redis:8
     container_name: paperless-ngx-redis
     volumes:
-      - ./redis-data:/data
+      - ./data/redis:/data
     restart: always
   webserver:
     image: paperless-ngx/paperless-ngx:latest

@@ -1,6 +1,5 @@
 # https://nginxproxymanager.com/guide/#quick-setup
 
-version: "3"
 
 services:
   app:

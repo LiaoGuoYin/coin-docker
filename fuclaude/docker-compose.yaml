@@ -3,7 +3,6 @@
 # https://github.com/wozulong/fuclaude
 # https://hub.docker.com/r/pengzhile/fuclaude
 
-version: "3"
 
 services:
   fuclaude:

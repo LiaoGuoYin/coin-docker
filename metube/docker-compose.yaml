@@ -1,6 +1,5 @@
 # https://github.com/alexta69/metube
 
-version: "3"
 
 services:
   metube:

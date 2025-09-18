@@ -1,5 +1,4 @@
 # https://coder.com/docs/code-server/install#docker
-version: "3"
 
 services:
   code-server:

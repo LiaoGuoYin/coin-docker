@@ -1,6 +1,5 @@
 # https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/
 # https://catcat.blog/docker-install-rustdesk.html
-version: "3"
 
 services:
   hbbs: # RustDesk ID/Rendezvous 服务器
