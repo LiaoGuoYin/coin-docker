@@ -2,7 +2,7 @@
 
 services:
   homeassistant:
-    image: "ghcr.io/home-assistant/home-assistant:stable"
+    image: homeassistant/home-assistant:latest
     container_name: homeassistant
     volumes:
       - ./config:/config

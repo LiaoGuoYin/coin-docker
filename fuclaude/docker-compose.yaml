@@ -3,7 +3,6 @@
 # https://github.com/wozulong/fuclaude
 # https://hub.docker.com/r/pengzhile/fuclaude
 
-
 services:
   fuclaude:
     image: pengzhile/fuclaude:latest
@@ -13,14 +12,14 @@ services:
     environment:
       - TZ=Asia/Shanghai
       - FUCLAUDE_BIND=0.0.0.0:${FUCLAUDE_BIND_PORT}
-      - FUCLAUDE_TIMEOUT=${FUCLAUDE_TIMEOUT}
-      - FUCLAUDE_PROXY_URL=${FUCLAUDE_PROXY_URL}
-      - FUCLAUDE_REAL_LOGOUT=${FUCLAUDE_REAL_LOGOUT}
-      - FUCLAUDE_SITE_PASSWORD=${FUCLAUDE_SITE_PASSWORD}
-      - FUCLAUDE_COOKIE_SECRET=${FUCLAUDE_COOKIE_SECRET}
-      - FUCLAUDE_OPENAI_BASE_URL=${FUCLAUDE_OPENAI_BASE_URL}
-      - FUCLAUDE_OPENAI_API_KEY=${FUCLAUDE_OPENAI_API_KEY}
-      - FUCLAUDE_MODERATION_ENABLED=${FUCLAUDE_MODERATION_ENABLED}
-      - FUCLAUDE_SIGNUP_ENABLED=${FUCLAUDE_SIGNUP_ENABLED}
-      - FUCLAUDE_SHOW_SESSION_KEY=${FUCLAUDE_SHOW_SESSION_KEY}
+      - FUCLAUDE_TIMEOUT=600
+      - FUCLAUDE_PROXY_URL=
+      - FUCLAUDE_REAL_LOGOUT=false
+      - FUCLAUDE_SITE_PASSWORD=
+      - FUCLAUDE_COOKIE_SECRET=1234567890abcdefghijklmnopqrstuv
+      - FUCLAUDE_OPENAI_BASE_URL=https://api.openai.com/v1
+      - FUCLAUDE_OPENAI_API_KEY=sk-xxxxx
+      - FUCLAUDE_MODERATION_ENABLED=false
+      - FUCLAUDE_SIGNUP_ENABLED=false
+      - FUCLAUDE_SHOW_SESSION_KEY=false
     restart: always

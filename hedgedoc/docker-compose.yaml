@@ -1,7 +1,6 @@
 # https://docs.hedgedoc.org/setup/docker/
 # https://docs.hedgedoc.org/configuration/
 
-
 services:
   database:
     image: postgres:13.4-alpine
@@ -15,7 +14,7 @@ services:
     restart: always
   app:
     # Make sure to use the latest release from https://hedgedoc.org/latest-release
-    image: quay.io/hedgedoc/hedgedoc:1.10.3
+    image: linuxserver/hedgedoc:latest
     container_name: hedgedoc
     ports:
       - ${HEDGEDOC_PORT}:${HEDGEDOC_PORT}
