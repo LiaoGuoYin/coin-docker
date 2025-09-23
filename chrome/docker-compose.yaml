@@ -1,0 +1,22 @@
+# https://hub.docker.com/r/linuxserver/chromium
+
+services:
+  chromium:
+    image: linuxserver/chromium:latest
+    container_name: chromium
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      # - PUID=1000
+      # - PGID=1000
+      - TZ=Etc/UTC
+      - LC_ALL=zh_CN.UTF-8
+      - CUSTOM_USER=${CUSTOM_USER}
+      - PASSWORD=${PASSWORD}
+      - CUSTOM_PORT=33000
+      - CUSTOM_HTTPS_PORT=33001
+    volumes:
+      - ./data/config:/config
+    shm_size: "1gb"
+    restart: unless-stopped
+    network_mode: host
