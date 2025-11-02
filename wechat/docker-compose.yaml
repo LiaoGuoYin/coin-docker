@@ -1,0 +1,23 @@
+# https://github.com/nickrunning/wechat-selkies
+
+services:
+  wechat-selkies:
+    image: nickrunning/wechat-selkies:latest # or ghcr.io/nickrunning/wechat-selkies:latest
+    container_name: wechat-selkies
+    ports:
+      - "10030:3000"
+      - "10031:3001"
+    restart: always
+    volumes:
+      - ./data:/config
+    # devices:
+    #   - /dev/dri:/dev/dri
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Asia/Shanghai
+      - LC_ALL=zh_CN.UTF-8
+      - AUTO_START_WECHAT=true
+      - AUTO_START_QQ=false
+      - CUSTOM_USER=${CUSTOM_USER}
+      - PASSWORD=${PASSWORD}
