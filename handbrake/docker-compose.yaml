@@ -17,5 +17,4 @@ services:
       - TZ=Asia/Shanghai
     devices:
       - /dev/dri:/dev/dri # Intel核显加速
-    network_mode: bridge
     restart: always

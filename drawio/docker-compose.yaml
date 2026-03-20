@@ -10,4 +10,4 @@ services:
       - DRAWIO_BASE_URL=${DRAWIO_BASE_URL}
     volumes:
       - ./data:/usr/local/tomcat/webapps/draw/data
-    restart: unless-stopped
+    restart: always

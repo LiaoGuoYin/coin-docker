@@ -5,8 +5,8 @@ services:
     image: nickrunning/wechat-selkies:latest # or ghcr.io/nickrunning/wechat-selkies:latest
     container_name: wechat-selkies
     ports:
-      - "10030:3000"
-      - "10031:3001"
+      - 10030:3000
+      - 10031:3001
     restart: always
     volumes:
       - ./data:/config

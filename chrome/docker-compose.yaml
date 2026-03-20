@@ -18,5 +18,5 @@ services:
     volumes:
       - ./data/config:/config
     shm_size: "1gb"
-    restart: unless-stopped
+    restart: always
     network_mode: host

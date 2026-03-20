@@ -1,11 +1,12 @@
 # https://github.com/zyclonite/zerotier-docker
+# https://hub.docker.com/r/seedgou/zerotier
 
 services:
   zerotier-one:
-    image: zyclonite/zerotier
+    image: zyclonite/zerotier:latest
     container_name: zerotier-one
     devices:
-      - /dev/net/tun:/dev/net/tun
+      - /dev/net/tun
     cap_add:
       - NET_ADMIN
       - SYS_ADMIN
