@@ -8,7 +8,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      - USERNAME=REDACTED
+      - USERNAME=${MOONTV_USERNAME}
       - PASSWORD=${MOONTV_PASSWORD:-admin123}
       - NEXT_PUBLIC_STORAGE_TYPE=upstash
       - UPSTASH_URL=${UPSTASH_URL}
