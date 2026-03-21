@@ -1,0 +1,15 @@
+# https://github.com/syncthing/syncthing/blob/main/README-Docker.md
+
+
+services:
+  syncthing:
+    image: syncthing/syncthing:latest
+    container_name: syncthing
+    hostname: ${SYNCTHING_HOSTNAME:-syncthing}
+    environment:
+      - PUID=1000
+      - PGID=1000
+    network_mode: host
+    volumes:
+      - ./data:/var/syncthing
+    restart: always
