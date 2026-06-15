@@ -1,0 +1,23 @@
+# https://github.com/Gloridust/WechatOnCloud
+# The panel is the only external entry point. It mounts docker.sock to spawn
+# WeChat/Chromium instance containers on demand and reverse-proxies them, so
+# instances are never exposed to the host directly.
+
+services:
+  panel:
+    image: docker.io/gloridust/woc-panel:latest
+    container_name: woc-panel
+    environment:
+      - PORT=8080
+      # Image the panel uses when creating new WeChat instances
+      - WOC_WECHAT_IMAGE=docker.io/gloridust/wechat-on-cloud:latest
+      - PANEL_ADMIN_PASSWORD=${WOC_PASSWORD}
+      - PANEL_DATA=/data/accounts.json
+    volumes:
+      - ./data/panel:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Read-only /dev so the panel can auto-map camera/v4l2loopback into instances
+      - /dev:/host-dev:ro
+    ports:
+      - 36080:8080
+    restart: always
