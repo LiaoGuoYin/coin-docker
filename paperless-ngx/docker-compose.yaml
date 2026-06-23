@@ -21,5 +21,5 @@ services:
       - ./data/export:/usr/src/paperless/export
       - ./data/consume:/usr/src/paperless/consume
     environment:
-      - PAPERLESS_REDIS=redis://broker:6379
+      PAPERLESS_REDIS: redis://broker:6379
     restart: always

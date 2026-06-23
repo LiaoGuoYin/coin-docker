@@ -7,9 +7,13 @@ services:
     container_name: syncthing
     hostname: ${SYNCTHING_HOSTNAME:-syncthing}
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${SYNCTHING_PUID:-1000}
+      - PGID=${SYNCTHING_PGID:-1000}
+      - STGUIADDRESS=0.0.0.0:${SYNCTHING_GUI_PORT:-11111}
+      - STGUIUSER=${SYNCTHING_GUI_USER}
+      - STGUIPASSWORD=${SYNCTHING_GUI_PASSWORD}
     network_mode: host
     volumes:
       - ./data:/var/syncthing
+      - /vol1/1000/app/:/vol1/1000/app/
     restart: always

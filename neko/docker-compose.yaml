@@ -1,0 +1,14 @@
+services:
+  neko-master:
+    image: foru17/neko-master:latest
+    container_name: neko-master
+    restart: unless-stopped
+    ports:
+      - "13900:3000" # Web UI
+    volumes:
+      - ./data:/app/data
+        # - ./geoip:/app/data/geoip:ro
+    environment:
+      - NODE_ENV=production
+      - DB_PATH=/app/data/stats.db
+      - COOKIE_SECRET=${COOKIE_SECRET}

@@ -8,7 +8,7 @@ services:
     image: pengzhile/fuclaude:latest
     container_name: fuclaude
     ports:
-      - ${FUCLAUDE_BIND_PORT}:${FUCLAUDE_BIND_PORT}
+      - 0.0.0.0:${FUCLAUDE_BIND_PORT}:${FUCLAUDE_BIND_PORT}
     environment:
       - TZ=Asia/Shanghai
       - FUCLAUDE_BIND=0.0.0.0:${FUCLAUDE_BIND_PORT}

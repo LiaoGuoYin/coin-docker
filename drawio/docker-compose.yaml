@@ -1,0 +1,13 @@
+# https://hub.docker.com/r/jgraph/drawio/tags?name=latest
+
+services:
+  drawio:
+    image: jgraph/drawio:latest
+    container_name: drawio
+    ports:
+      - 28080:8080
+    environment:
+      - DRAWIO_BASE_URL=${DRAWIO_BASE_URL}
+    volumes:
+      - ./data:/usr/local/tomcat/webapps/draw/data
+    restart: unless-stopped

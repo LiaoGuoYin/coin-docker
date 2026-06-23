@@ -6,8 +6,8 @@ services:
     image: vocrx/snell-server:latest
     container_name: snell-server
     environment:
-      - PORT=${SNELL_PORT}
-      - PSK=${SNELL_PSK}
-      - IPV6=${SNELL_IPV6}
+      PORT: ${SNELL_PORT}
+      PSK: ${SNELL_PSK}
+      IPV6: ${SNELL_IPV6}
     network_mode: host
     restart: always

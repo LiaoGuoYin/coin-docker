@@ -7,16 +7,22 @@ services:
     security_opt:
       - seccomp:unconfined
     environment:
-      # - PUID=1000
-      # - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=Asia/Shanghai
       - LC_ALL=zh_CN.UTF-8
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
       - CUSTOM_PORT=33000
       - CUSTOM_HTTPS_PORT=33001
+      - DISPLAY_SERVER=x11
+      - PIXELFLUX_WAYLAND=false
+      - SELKIES_FRAMERATE=24
+      - SELKIES_JPEG_QUALITY=65
+      - SELKIES_ENCODER=jpeg
+      - SELKIES_IS_MANUAL_RESOLUTION_MODE=true
+      - SELKIES_MANUAL_WIDTH=1920
+      - SELKIES_MANUAL_HEIGHT=1080
     volumes:
       - ./data/config:/config
-    shm_size: "1gb"
+    shm_size: "4gb"
     restart: always
     network_mode: host

@@ -13,3 +13,4 @@ services:
     volumes:
       - ./data:/home/node/server/data
     restart: always
+    network_mode: host
