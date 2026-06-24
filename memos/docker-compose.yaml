@@ -5,6 +5,8 @@ services:
   memos:
     image: neosmemo/memos:stable
     container_name: memos
+    environment:
+      - MEMOS_INSTANCE_URL=${MEMOS_INSTANCE_URL}
     volumes:
       - ./data:/var/opt/memos
     ports:
