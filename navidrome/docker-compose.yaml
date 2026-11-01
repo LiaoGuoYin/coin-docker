@@ -1,0 +1,18 @@
+# https://www.navidrome.org/docs/installation/docker/
+
+services:
+  navidrome:
+    image: navidrome/navidrome:latest
+    container_name: navidrome
+    user: ${NAVIDROME_UID}:${NAVIDROME_GID}
+    ports:
+      - 4533:4533
+    environment:
+      - TZ=Asia/Shanghai
+      # Demusic needs original file bytes for content hashing and on-device separation.
+      - ND_ENABLEDOWNLOADS=true
+      - ND_AUTOTRANSCODEDOWNLOAD=false
+    volumes:
+      - ./data/app:/data
+      - /vol1/1000/Downloads/songs:/music:ro
+    restart: always
