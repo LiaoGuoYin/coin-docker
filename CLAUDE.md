@@ -40,4 +40,4 @@ Per service: `cd <name> && cp .env.example .env && docker compose up -d`
 - **Media:** `metube`, `handbrake`, `moontv`, `navidrome`
 - **Dev tools:** `asspp`, `fuclaude`, `it-tools`, `shellngn`
 - **Smart home:** `home-assistant`
-- **Other:** `cloudsaver`, `libre`, `nullbr115`, `syncthing`
+- **Other:** `cloudsaver`, `libre`, `nullbr115`, `syncthing`, `vohive`

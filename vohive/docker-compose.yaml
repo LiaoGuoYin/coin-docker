@@ -1,0 +1,22 @@
+# https://github.com/dannyge/vohive-docker
+
+# SMS gateway for a Quectel 4G modem (DJI module already rewritten to 2c7c:0125).
+services:
+  vohive:
+    image: ghcr.io/dannyge/openvohive:latest
+    container_name: vohive
+    # Needs raw access to the modem's AT/QMI ports under /dev.
+    privileged: true
+    ports:
+      - 7575:7575
+    environment:
+      - TZ=Asia/Shanghai
+      - PROXY_SERVER_PORT=7575
+      - PROXY_WEB_USERNAME=admin
+      # Fail fast: without it, upstream generates a random password on every start.
+      - PROXY_WEB_PASSWORD=${VOHIVE_PASSWORD:?set VOHIVE_PASSWORD in .env}
+    volumes:
+      - /dev:/dev
+      - /sys:/sys:ro
+      - ./data:/app/data
+    restart: always
