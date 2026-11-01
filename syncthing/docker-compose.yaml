@@ -16,4 +16,9 @@ services:
     volumes:
       - ./data:/var/syncthing
       - /vol1/1000/app/:/vol1/1000/app/
+    healthcheck:
+      # Upstream probes 8384, but the GUI listens on SYNCTHING_GUI_PORT.
+      test: curl -fkLsS -m 2 127.0.0.1:${SYNCTHING_GUI_PORT:-11111}/rest/noauth/health | grep -o --color=never OK || exit 1
+      interval: 1m
+      timeout: 10s
     restart: always
