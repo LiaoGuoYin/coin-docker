@@ -35,9 +35,9 @@ Per service: `cd <name> && cp .env.example .env && docker compose up -d`
 ## Service Categories
 
 - **Networking/proxy:** `nginxproxy`, `tailscale`, `zerotier-one`, `zerotier-moon`, `snell`, `derper`, `v2ray`
-- **Remote access:** `rustdesk`, `code-server`, `ttyd`, `chrome`, `wechat-on-cloud`
+- **Remote access:** `rustdesk`, `code-server`, `ttyd`, `chrome`
 - **Productivity:** `n8n`, `hedgedoc`, `memos`, `paperless-ngx`, `drawio`
-- **Media:** `metube`, `handbrake`, `moontv`
+- **Media:** `metube`, `handbrake`, `moontv`, `navidrome`
 - **Dev tools:** `asspp`, `fuclaude`, `it-tools`, `shellngn`
 - **Smart home:** `home-assistant`
 - **Other:** `cloudsaver`, `libre`, `nullbr115`, `syncthing`
