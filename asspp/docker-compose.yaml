@@ -1,0 +1,15 @@
+# https://github.com/Lakr233/AssppWeb
+
+services:
+  asspp:
+    image: ghcr.io/lakr233/assppweb:latest
+    container_name: asspp
+    environment:
+      - DATA_DIR=/data
+      - PORT=18080
+      - ACCESS_PASSWORD=${ACCESS_PASSWORD}
+    volumes:
+      - ./data:/data
+    ports:
+      - 18080:18080
+    restart: always

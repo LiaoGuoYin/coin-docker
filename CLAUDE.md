@@ -38,6 +38,6 @@ Per service: `cd <name> && cp .env.example .env && docker compose up -d`
 - **Remote access:** `rustdesk`, `code-server`, `ttyd`, `chrome`, `wechat-on-cloud`
 - **Productivity:** `n8n`, `hedgedoc`, `memos`, `paperless-ngx`, `drawio`
 - **Media:** `metube`, `handbrake`, `moontv`
-- **Dev tools:** `fuclaude`, `it-tools`, `shellngn`
+- **Dev tools:** `asspp`, `fuclaude`, `it-tools`, `shellngn`
 - **Smart home:** `home-assistant`
 - **Other:** `cloudsaver`, `libre`, `nullbr115`, `syncthing`
